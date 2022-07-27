@@ -1,0 +1,11 @@
+{
+	"name": "MITSUFUMI AZAMA",
+  "lang": "ja",
+	"start_url": "/",
+	"background_color":	"#061027",
+	"theme_color": "#061027",
+	"icons": [
+    { "src": "./images/common/android-icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "./images/common/android-icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

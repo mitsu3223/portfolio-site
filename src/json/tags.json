@@ -1,0 +1,14 @@
+{
+  "website": {
+    "label": "Web site",
+    "color": "purple"
+  },
+  "saas": {
+    "label": "SaaS",
+    "color": "magenta"
+  },
+  "private": {
+    "label": "Private",
+    "color": "lightBlue"
+  }
+}

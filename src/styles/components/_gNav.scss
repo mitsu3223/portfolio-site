@@ -1,0 +1,43 @@
+.gNav {
+  margin-right: 20px;
+  font-weight: 700;
+
+  @include media-query-medium {
+    display: none;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 15px 20px;
+
+    a {
+      display: block;
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 3px;
+        background-color: #16b2ce;
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        @include transition('width', .4s, 'ease-in-cubic');
+      }
+
+      &:hover {
+        &:after {
+          width: 100%;
+          @include transition('width', .4s, 'ease-in-cubic');
+        }
+      }
+    }
+  }
+}

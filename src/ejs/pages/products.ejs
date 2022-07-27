@@ -1,0 +1,60 @@
+<% const tags = require('../../json/tags.json') %>
+
+<%- include('../components/_head') %>
+  <body data-page="product">
+    <%- include('../components/_header') %>
+
+    <main>
+      <section class="fV">
+        <div class="fV__inner">
+          <h1 class="fV__img">
+            <picture>
+              <source type="image/webp" data-srcset="/images/products/<%- id %>/fv.webp">
+              <img src="/images/common/lazyload.png" data-src="/images/products/<%- id %>/fv.png" alt="制作実績" width="700" height="650" class="archives__img lazyload">
+            </picture>
+          </h1>
+          <div class="fV__info">
+            <div class="fV__tag -<%- tags[tag].color %>"><%- tags[tag].label %></div>
+            <dl class="fV__list">
+              <dt>Occupation</dt>
+              <dd><%- occupation %></dd>
+              <dt>Service</dt>
+              <dd>
+                <%- service %>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills">
+        <div class="skills__inner">
+          <h2 class="sectionSubTitle">Skills</h2>
+          <ul class="labelList">
+            <% for (let i = 0; i < skills.length; i++) { %>
+            <li class="labelList__item"><%- skills[i] %></li>
+            <% }; %>
+          </ul>
+        </div>
+      </section>
+
+      <section class="archives">
+        <div class="archives__inner">
+          <%
+            for (let i = 0; i < products_num; i++) {
+              const pId = i + 1;
+          %>
+          <div class="archives__item">
+            <div class="archives__item_inner">
+              <picture>
+                <source type="image/webp" data-srcset="/images/products/<%- id %>/<%- pId %>.webp">
+                <img src="/images/common/lazyload.png" data-src="/images/products/<%- id %>/<%- pId %>.png" alt="制作実績 <%- pId %>" width="960" height="800" class="archives__img lazyload">
+              </picture>
+            </div>
+          </div>
+          <% }; %>
+        </div>
+      </section>
+    </main>
+
+  <%- include('../components/_footer') %>

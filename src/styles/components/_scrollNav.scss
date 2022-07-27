@@ -1,0 +1,47 @@
+.scrollNav {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  z-index: 1;
+  margin-top: -60px;
+  padding: 0;
+
+  @include media-query-medium {
+    display: none;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    margin: 15px 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-radius: 10px;
+      background-color: #fff;
+      @include transition('all', .4s, 'ease-in-cubic');
+      position: absolute;
+      top: 50%;
+      right: 50%;
+    }
+
+    &:hover,
+    &.-js__active {
+      &::before {
+        @include transition('all', .4s, 'ease-in-cubic');
+        width: 30px;
+        margin-right: -10px;
+        border-radius: 0;
+      }
+    }
+  }
+}

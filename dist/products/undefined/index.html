@@ -1,0 +1,117 @@
+Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/template-ejs-loader  /lib/index.js):
+  ReferenceError: /Users/aza/Desktop/development/aza/src/ejs/p  ages/products.ejs:11
+      9|           <h1 class="fV__img">
+      10|             <picture>
+   >> 11|               <source type="image/webp" data-srcset=  "/images/products/<%- id %>/fv.webp">
+      12|               <img src="/images/common/lazyload.png"   data-src="/images/products/<%- id %>/fv.png" alt="制作実績" wid  th="700" height="650" class="archives__img lazyload">
+      13|             </picture>
+      14|           </h1>
+  
+  id is not defined
+      at eval ("/Users/aza/Desktop/development/aza/src/ejs/pag  es/products.ejs":19:17)
+      at products (/Users/aza/Desktop/development/aza/node_mod  ules/ejs/lib/ejs.js:703:17)
+      at Object.ejsLoader (/Users/aza/Desktop/development/aza/  node_modules/template-ejs-loader/lib/index.js:107:78)
+  ModuleBuildError: Module build failed (from ./node_modules/t  emplate-ejs-loader/lib/index.js):
+  ReferenceError: /Users/aza/Desktop/development/aza/src/ejs/p  ages/products.ejs:11
+      9|           <h1 class="fV__img">
+      10|             <picture>
+   >> 11|               <source type="image/webp" data-srcset=  "/images/products/<%- id %>/fv.webp">
+      12|               <img src="/images/common/lazyload.png"   data-src="/images/products/<%- id %>/fv.png" alt="制作実績" wid  th="700" height="650" class="archives__img lazyload">
+      13|             </picture>
+      14|           </h1>
+  
+  id is not defined
+      at eval ("/Users/aza/Desktop/development/aza/src/ejs/pag  es/products.ejs":19:17)
+      at products (/Users/aza/Desktop/development/aza/node_mod  ules/ejs/lib/ejs.js:703:17)
+      at Object.ejsLoader (/Users/aza/Desktop/development/aza/  node_modules/template-ejs-loader/lib/index.js:107:78)
+      at processResult (/Users/aza/Desktop/development/aza/nod  e_modules/webpack/lib/NormalModule.js:758:19)
+      at /Users/aza/Desktop/development/aza/node_modules/webpa  ck/lib/NormalModule.js:860:5
+      at /Users/aza/Desktop/development/aza/node_modules/loade  r-runner/lib/LoaderRunner.js:400:11
+      at /Users/aza/Desktop/development/aza/node_modules/loade  r-runner/lib/LoaderRunner.js:252:18
+      at context.callback (/Users/aza/Desktop/development/aza/  node_modules/loader-runner/lib/LoaderRunner.js:124:13)
+      at Object.ejsLoader (/Users/aza/Desktop/development/aza/  node_modules/template-ejs-loader/lib/index.js:111:9)
+  
+  - products.ejs":19 eval
+    "/Users/aza/Desktop/development/aza/src/ejs/pages/products    .ejs":19:17
+  
+  - ejs.js:703 products
+    [aza]/[ejs]/lib/ejs.js:703:17
+  
+  - index.js:107 Object.ejsLoader
+    [aza]/[template-ejs-loader]/lib/index.js:107:78
+  
+  - ModuleBuildError: Module build failed (from ./node_modules    /template-ejs-loader/lib/index.js):
+  
+  - ReferenceError: /Users/aza/Desktop/development/aza/src/ejs    /pages/products.ejs:11
+  
+  - 9|           <h1 class="fV__img">
+  
+  - 10|             <picture>
+  
+  - >> 11|               <source type="image/webp" data-srcset    ="/images/products/<%- id %>/fv.webp">
+  
+  - 12|               <img src="/images/common/lazyload.png" d    ata-src="/images/products/<%- id %>/fv.png" alt="制作実績" wid    th="700" height="650" class="archives__img lazyload">
+  
+  - 13|             </picture>
+  
+  - 14|           </h1>
+  
+  - id is not defined
+  
+  - products.ejs":19 eval
+    "/Users/aza/Desktop/development/aza/src/ejs/pages/products    .ejs":19:17
+  
+  - ejs.js:703 products
+    [aza]/[ejs]/lib/ejs.js:703:17
+  
+  - index.js:107 Object.ejsLoader
+    [aza]/[template-ejs-loader]/lib/index.js:107:78
+  
+  - NormalModule.js:758 processResult
+    [aza]/[webpack]/lib/NormalModule.js:758:19
+  
+  - NormalModule.js:860 
+    [aza]/[webpack]/lib/NormalModule.js:860:5
+  
+  - LoaderRunner.js:400 
+    [aza]/[loader-runner]/lib/LoaderRunner.js:400:11
+  
+  - LoaderRunner.js:252 
+    [aza]/[loader-runner]/lib/LoaderRunner.js:252:18
+  
+  - LoaderRunner.js:124 context.callback
+    [aza]/[loader-runner]/lib/LoaderRunner.js:124:13
+  
+  - index.js:111 Object.ejsLoader
+    [aza]/[template-ejs-loader]/lib/index.js:111:9
+  
+  - child-compiler.js:169 
+    [aza]/[html-webpack-plugin]/lib/child-compiler.js:169:18
+  
+  - Compiler.js:551 finalCallback
+    [aza]/[webpack]/lib/Compiler.js:551:5
+  
+  - Compiler.js:577 
+    [aza]/[webpack]/lib/Compiler.js:577:11
+  
+  - Compiler.js:1196 
+    [aza]/[webpack]/lib/Compiler.js:1196:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [aza]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1192 
+    [aza]/[webpack]/lib/Compiler.js:1192:33
+  
+  - Compilation.js:2787 finalCallback
+    [aza]/[webpack]/lib/Compilation.js:2787:11
+  
+  - Compilation.js:3092 
+    [aza]/[webpack]/lib/Compilation.js:3092:11
+  
+  
+</pre>

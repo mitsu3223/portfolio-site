@@ -1,0 +1,19 @@
+html{
+  height: -webkit-fill-available;
+}
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  letter-spacing: 0.05em;
+  color: #fff;
+  font-family: 'Lato', "Hiragino Kaku Gothic Pro", "ＭＳ ゴシック", sans-serif;
+  font-weight: 400;
+
+  &.-is__show_nav {
+    overflow: hidden;
+  }
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}

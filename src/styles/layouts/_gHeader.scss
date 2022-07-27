@@ -1,0 +1,40 @@
+.gHeader {
+  width: 100%;
+  padding-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  @include media-query-medium {
+    padding-right: 15px;
+  }
+
+  &__log {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 5;
+    @include transition("opacity");
+
+    svg {
+      width: 60px;
+    }
+
+    @include hover {
+      opacity: .6;
+      @include transition("opacity");
+    }
+
+    @include media-query-medium {
+      top: 20px;
+      left: 20px;
+      svg {
+        width: 40px;
+      }
+    }
+  }
+}

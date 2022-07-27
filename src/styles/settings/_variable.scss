@@ -1,0 +1,59 @@
+$BREAK_POINT_M: "(max-width: 768px)";
+$BREAK_POINT_L: "(max-width: 1068px)";
+
+$TAG_PURPLE: #835FF9;
+$TAG_LIGHT_BLUE: #16b2ce;
+$TAG_MAGENTA: #ff4b98;
+
+$CUSTOM_EASE: cubic-bezier(0.3, 0.1, 0.1, 1);
+$CUSTOM_EASE: .3s;
+
+@mixin media-query-medium {
+  @media #{$BREAK_POINT_M} {
+    @content;
+  }
+}
+
+@mixin media-query-large {
+  @media #{$BREAK_POINT_L} {
+    @content;
+  }
+}
+
+@mixin font-family-Lato( $bold: 400 ) {
+  font-family: 'Lato', sans-serif;
+  font-weight: $bold;
+}
+
+@mixin bg-noise {
+  background: url('../images/common/bg__noise.gif') 0 0 / 200px 200px repeat;
+}
+
+@mixin hover($ie: false) {
+  &:focus {
+    @content;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin gradient-text( $gradient, $font-color: 'transparent' ) {
+  background: -webkit-linear-gradient(#{$gradient});
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin transition($properties, $duration: 0.4s, $ease: $CUSTOM_EASE) {
+  transition-property: #{$properties};
+  transition-duration: $duration;
+  transition-timing-function: $ease;
+}
+
+@mixin lazyloaded-class-style {
+  &.lazyloaded {
+    @content;
+  }
+}

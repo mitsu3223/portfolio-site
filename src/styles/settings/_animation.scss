@@ -1,0 +1,49 @@
+@keyframes noise-anim {
+  $steps: 20;
+
+  @for $i from 0 through $steps {
+    #{percentage($i * math.div(1, $steps))}{
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
+}
+
+@keyframes noise-anim-2 {
+  $steps: 20;
+
+  @for $i from 0 through $steps {
+    #{percentage($i * math.div(1, $steps))}{
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
+}
+
+@keyframes show-up-anim {
+  0%{
+    clip-path: polygon(100% 100%, 0 100%, 0 100%, 100% 100%);
+    transform: translateY(10%);
+  }
+  100%{
+    clip-path: polygon(100% 100%, 0 100%, 0 0, 100% 0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes verticalMaskAnim {
+  0% {
+    -webkit-clip-path: inset(0 0 100% 0);
+    clip-path: inset(0 0 100% 0)
+  }
+  25% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0)
+  }
+  75% {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0)
+  }
+  to {
+    -webkit-clip-path: inset(100% 0 0 0);
+    clip-path: inset(100% 0 0 0)
+  }
+}

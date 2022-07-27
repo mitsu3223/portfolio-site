@@ -1,0 +1,26 @@
+.mouseStalker {
+  position: fixed;
+  pointer-events: none;
+  top: -6px;
+  left: -6px;
+  width: 12px;
+  height: 12px;
+  background: #16b2ce;
+  border-radius: 50%;
+  transition: all .2s;
+  transition-timing-function: ease-out;
+  z-index: 999;
+  opacity: 0;
+
+  &.-is__show {
+    opacity: 1;
+  }
+  &.-is__active {
+      background: rgba(#16b2ce, .1);
+    top: -40px;
+    left: -40px;
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(#16b2ce, .5);
+  }
+}

@@ -1,0 +1,115 @@
+<% const tags = require('../../json/tags.json') %>
+
+<%- include('../components/_head') %>
+  <body data-page="index">
+    <%- include('../components/_header') %>
+
+    <ul class="scrollNav">
+      <li class="scrollNav__item">
+        <a href="#profile" class="scrollNav__link"></a>
+      </li>
+      <li class="scrollNav__item">
+        <a href="#aboutMe" class="scrollNav__link"></a>
+      </li>
+      <li class="scrollNav__item">
+        <a href="#archives" class="scrollNav__link"></a>
+      </li>
+    </ul>
+
+    <main>
+      <section class="mainV" id="profile">
+        <h1 class="mainV__profile mainV__text-up">
+          <div class="mainV__profile_name">MITSUFUMI</div>
+          <div class="mainV__profile_name">AZAMA</div>
+          <p class="mainV__subText mainV__text-up">
+            Frontend Engineer / Web Designer
+          </p>
+        </h1>
+        <div class="mainV__slide mainV__text-up">
+          <div class="mainV__slide_item">
+            <picture>
+              <source type="image/webp" data-srcset="./images/pc/mainV_slide_2.webp">
+              <img src="./images/common/lazyload.png" data-src="./images/pc/mainV_slide_2.jpg" alt="イラスト1" width="600" height="600" class="lazyload">
+            </picture>
+          </div>
+          <div class="mainV__slide_item">
+            <picture>
+              <source type="image/webp" data-srcset="./images/pc/mainV_slide_1.webp">
+              <img src="./images/common/lazyload.png" data-src="./images/pc/mainV_slide_1.jpg" alt="イラスト2" width="600" height="600" class="lazyload">
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="aboutMe" id="aboutMe">
+        <h2 class="sectionTitle">
+          <span class="sectionTitle__text">About me</span>
+          <span class="sectionTitle__vis"></span>
+        </h2>
+        <div class="aboutMe__inner">
+          <strong class="aboutMe__name">MITSUFUMI AZAMA</strong>
+          <section class="aboutMe__section">
+            <h3 class="sectionSubTitle">Occupation</h3>
+            <p>Frontend Engineer / Web Designer</p>
+          </section>
+          <section class="aboutMe__section">
+            <h3 class="sectionSubTitle">Skills</h3>
+            <ul class="labelList">
+              <li class="labelList__item">JavaScript</li>
+              <li class="labelList__item">jQuery</li>
+              <li class="labelList__item">Node.js</li>
+              <li class="labelList__item">Vue.js</li>
+              <li class="labelList__item">React.js</li>
+              <li class="labelList__item">webpack</li>
+              <li class="labelList__item">GSAP</li>
+              <li class="labelList__item">PHP</li>
+              <li class="labelList__item">Laravel</li>
+              <li class="labelList__item">WordPress</li>
+              <li class="labelList__item">HTML</li>
+              <li class="labelList__item">CSS</li>
+              <li class="labelList__item">SCSS</li>
+              <li class="labelList__item">Git</li>
+              <li class="labelList__item">Photoshop</li>
+              <li class="labelList__item">XD</li>
+              <li class="labelList__item">Illustrator</li>
+              <li class="labelList__item">After Effects</li>
+              <li class="labelList__item">Premiere Pro</li>
+            </ul>
+          </section>
+          <section class="aboutMe__section">
+            <h3 class="sectionSubTitle">Contact</h3>
+            <p><a href="mailto:aza.mitsu.3223@gmail.com">aza.mitsu.3223@gmail.com</a></p>
+          </section>
+        </div>
+      </section>
+
+      <section class="archives" id="archives">
+        <h2 class="archives__title sectionTitle">
+          <span class="sectionTitle__text">Achievements</span>
+          <span class="sectionTitle__vis"></span>
+        </h2>
+        <div class="archives__items">
+          <%
+            for (let i = 0; i < productsData.length; i++) {
+              const pId = i + 1;
+          %>
+          <div class="archives__item">
+            <a href="./products/<%- productsData[i].id %>/index.html">
+              <picture>
+                <source type="image/webp" data-srcset="/images/products/<%- productsData[i].id %>/thumbnail.webp">
+                <img src="./images/common/lazyload.png" data-src="/images/products/1/thumbnail.png" alt="制作実績 <%- pId %>" width="700" height="650" class="archives__img lazyload">
+              </picture>
+              <div class="archives__tag -left">
+                <div class="archives__tag_text"><%- tags[productsData[i].tag].label %></div>
+                <div class="archives__tag_vis -<%- tags[productsData[i].tag].color %>"></div>
+              </div>
+              <div class="archives__layer"></div>
+              <span class="archives__moreBtn">View more</span>
+            </a>
+          </div>
+          <% }; %>
+        </div>
+      </section>
+    </main>
+
+  <%- include('../components/_footer') %>
