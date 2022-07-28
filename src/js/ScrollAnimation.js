@@ -9,8 +9,8 @@ export default class {
       yPercent: -100,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: '.main',
-        start: 'top top',
+        trigger: '.gNav__Trigger',
+        start: 'center center',
         scrub: true,
       }
     });
