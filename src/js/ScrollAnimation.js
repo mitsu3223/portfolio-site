@@ -1,3 +1,4 @@
+import { isEmptyNodeList } from './utils';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -8,8 +9,8 @@ export default class {
       yPercent: -100,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: '.mainV',
-        start: 'center center',
+        trigger: '.main',
+        start: 'top top',
         scrub: true,
       }
     });
@@ -77,12 +78,25 @@ export default class {
 
   addArchivesAnimation() {
     const item = document.querySelectorAll('.archives__item');
-    const tag = document.querySelectorAll('.archives__tag_text');
-    const vis = document.querySelectorAll('.archives__tag_vis');
 
+    if (!isEmptyNodeList(item)) {
+      return;
+    }
 
     for (let i = 0; i < item.length; i++) {
       this.itemAnimation(item[i]);
+    }
+  }
+
+  addArchivesTagAnimation() {
+    const tag = document.querySelectorAll('.archives__tag_text');
+    const vis = document.querySelectorAll('.archives__tag_vis');
+
+    if (!isEmptyNodeList(tag) || !isEmptyNodeList(vis)) {
+      return;
+    }
+
+    for (let i = 0; i < tag.length; i++) {
       this.tagAnimation(tag[i], .5);
       this.tagAnimation(vis[i], .4);
     }
@@ -143,11 +157,18 @@ export default class {
   }
 
   addTextUpAnimation() {
-    gsap.set('.mainV__text-up', {
+    const targetSelector = '.mainV__text-up';
+    const target = document.querySelectorAll(targetSelector);
+
+    if (!isEmptyNodeList(target)) {
+      return;
+    }
+
+    gsap.set(targetSelector, {
       opacity: 0.5,
     });
 
-    gsap.to('.mainV__text-up', {
+    gsap.to(targetSelector, {
       yPercent: -50,
       opacity: 1,
       scrollTrigger: {
@@ -167,5 +188,6 @@ export default class {
     this.addTextUpAnimation();
     this.addTitleAnimation();
     this.addArchivesAnimation();
+    this.addArchivesTagAnimation();
   }
 };
